@@ -6,5 +6,5 @@ class Character:
         self.damage = damage
 
     def attack(self, target):
-        target.hp -= self.damage
-        target.hp = max(target.hp, 0)
+        target.health -= self.damage
+        target.health = max(target.health, 0)
