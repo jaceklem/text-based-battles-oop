@@ -1,13 +1,34 @@
-from character import Character
+from character import Hero, Enemy
+from weapon import *
 
-hero = Character(name="Hero", health=100, damage=5)
-enemy = Character(name="Enemy", health=60, damage=3)
+def space():
+    print()
+
+# Small welcome screen
+print("Type 'exit' or 'q' to quit.")
+space()
+
+# Hero properties
+hero = Hero(name="Hero", health=100)
+hero.equip(iron_sword)
+
+space()
+
+# Enemy properties
+enemy = Enemy(name="Enemy", health=60, weapon=short_bow)
 
 while True:
+    print("-" * 6, "Damage Indicator", "-" * 6)
     hero.attack(enemy)
     enemy.attack(hero)
 
+    space()
+
+    print("-" * 6, "Stats", "-" * 6)
     print(f"Health of {hero.name}: {hero.health} HP.")
     print(f"Health of {enemy.name}: {enemy.health} HP.")
 
-    input()
+    inp = input()
+
+    if inp == "exit" or inp == "q":
+        break
