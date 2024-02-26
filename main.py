@@ -25,8 +25,8 @@ while True:
     space()
 
     print("-" * 6, "Stats", "-" * 6)
-    print(f"Health of {hero.name}: {hero.health} HP.")
-    print(f"Health of {enemy.name}: {enemy.health} HP.")
+    hero.health_bar.draw()
+    enemy.health_bar.draw()
 
     inp = input()
 
